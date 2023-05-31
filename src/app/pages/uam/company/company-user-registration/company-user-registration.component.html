@@ -1,0 +1,76 @@
+<mat-toolbar>
+    Company User Registration
+</mat-toolbar>
+<form [formGroup]="companyUserForm">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="User Name" formControlName="userName" />
+                <mat-error *ngIf="!companyUserForm.controls['userName'].valid && companyUserForm.controls['userName'].touched">
+                    User Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email" />
+                <mat-error *ngIf="!companyUserForm.controls['email'].valid && companyUserForm.controls['email'].touched && !companyUserForm.controls['email'].hasError('pattern')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyUserForm.controls['email'].hasError('pattern')">
+                    Enter Valid <strong> Email id</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="contactNumber" formControlName="contactNumber" />
+                <mat-error *ngIf="!companyUserForm.controls['contactNumber'].valid && companyUserForm.controls['contactNumber'].touched">
+                    Contact Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Designation</mat-label>
+                <input matInput placeholder="Designation" formControlName="designation" />
+                <mat-error *ngIf="!companyUserForm.controls['designation'].valid && companyUserForm.controls['designation'].touched">
+                    Designation is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Company Details</mat-label>
+                <input matInput placeholder="Company Details" formControlName="companyDetails" />
+                <mat-error *ngIf="!companyUserForm.controls['companyDetails'].valid && companyUserForm.controls['companyDetails'].touched">
+                    Company Details is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>User Role</mat-label>
+                <input matInput placeholder="User Role" formControlName="role" />
+                <mat-error *ngIf="!companyUserForm.controls['role'].valid && companyUserForm.controls['role'].touched">
+                    User Role is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button mat-raised-button color="primary" (click)="saveData()">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

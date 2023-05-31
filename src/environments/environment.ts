@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  environment: 'LOCAL',
+  apiUrl: 'https://bbdf-223-233-84-92.ngrok-free.app/',
+  pdfFilePath : 'http://10.0.82.70:8081/'
 };
 
 /*

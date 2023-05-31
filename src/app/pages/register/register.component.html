@@ -1,0 +1,127 @@
+<mat-toolbar>
+    Company Details
+</mat-toolbar>
+<form [formGroup]="companyDetailsform">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Company Name</mat-label>
+                <input matInput placeholder="companyName" formControlName="companyName" />
+                <mat-error *ngIf="!companyDetailsform.controls['companyName'].valid && companyDetailsform.controls['companyName'].touched">
+                    Company Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>CIA Number</mat-label>
+                <input matInput placeholder="CIA Number" formControlName="CIAnumber" />
+                <mat-error *ngIf="!companyDetailsform.controls['CIAnumber'].valid && companyDetailsform.controls['CIAnumber'].touched && !companyDetailsform.controls['CIAnumber'].hasError('pattern')">
+                    CIA Number is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyDetailsform.controls['CIAnumber'].hasError('pattern')">
+                    Enter Valid <strong>CIA Number</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>PAN Number</mat-label>
+                <input matInput placeholder="PAN Number" formControlName="panNumber" />
+                <mat-error *ngIf="!companyDetailsform.controls['panNumber'].valid && companyDetailsform.controls['panNumber'].touched && !companyDetailsform.controls['panNumber'].hasError('pattern')">
+                    PAN Number Number is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyDetailsform.controls['panNumber'].hasError('pattern')">
+                    Enter Valid <strong>PAN Number</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>GST Number</mat-label>
+                <input matInput placeholder="GST Number" formControlName="gstNumber" />
+                <mat-error *ngIf="!companyDetailsform.controls['gstNumber'].valid && companyDetailsform.controls['gstNumber'].touched && !companyDetailsform.controls['gstNumber'].hasError('pattern')">
+                    GST Number is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyDetailsform.controls['gstNumber'].hasError('pattern')">
+                    Enter Valid <strong> GST Number</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Company Website</mat-label>
+                <input matInput placeholder="Company Website" formControlName="companyWebsite" />
+                <mat-error *ngIf="!companyDetailsform.controls['companyWebsite'].valid && companyDetailsform.controls['companyWebsite'].touched">
+                    Company Website is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div> -->
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email" />
+                <mat-error *ngIf="!companyDetailsform.controls['email'].valid && companyDetailsform.controls['email'].touched && !companyDetailsform.controls['email'].hasError('pattern')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyDetailsform.controls['email'].hasError('pattern')">
+                    Enter Valid <strong> Email id</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Contact Number</mat-label>
+                <input matInput placeholder="contactNumber" formControlName="contactNumber" />
+                <mat-error *ngIf="!companyDetailsform.controls['contactNumber'].valid && companyDetailsform.controls['contactNumber'].touched">
+                    Contact Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Phone Number" formControlName="phoneNumber" />
+                <mat-error *ngIf="!companyDetailsform.controls['phoneNumber'].valid && companyDetailsform.controls['phoneNumber'].touched">
+                    Contact Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Size Of The Company</mat-label>
+                <input matInput placeholder="sizeoftheCompany" formControlName="sizeoftheCompany" />
+                <mat-error *ngIf="!companyDetailsform.controls['sizeoftheCompany'].valid && companyDetailsform.controls['sizeoftheCompany'].touched">
+                    Size Of The Company is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div> -->
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Website Details</mat-label>
+                <input matInput placeholder="websiteDetails" formControlName="websiteDetails" />
+                <mat-error *ngIf="!companyDetailsform.controls['websiteDetails'].valid && companyDetailsform.controls['websiteDetails'].touched">
+                    Website Details is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div fxFlex="49" fxFlex.lt-md="49" fxFlex.sm="100" fxLayout="column">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Uploaded File 3</mat-label>
+                <input matInput placeholder="Uploaded File 3" formControlName="fileUpload3" />
+                <mat-icon (click)="onFileSelected($event)" matSuffix>upload</mat-icon>
+                <input #fileInput1 type="file" id="fileUpload1" (change)="onFileSelected($event)" accept="application/pdf" class="hide-control" />
+            </mat-form-field>
+        </div> -->
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

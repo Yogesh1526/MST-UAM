@@ -1,0 +1,64 @@
+<mat-toolbar>
+    Company Email Configuration
+</mat-toolbar>
+<form [formGroup]="companyEmailform">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="User Name" formControlName="userName" />
+                <mat-error *ngIf="!companyEmailform.controls['userName'].valid && companyEmailform.controls['userName'].touched">
+                    User Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email" />
+                <mat-error *ngIf="!companyEmailform.controls['email'].valid && companyEmailform.controls['email'].touched && !companyEmailform.controls['email'].hasError('pattern')">
+                    Email is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="companyEmailform.controls['email'].hasError('pattern')">
+                    Enter Valid <strong> Email id</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="passWord" />
+                <mat-error *ngIf="!companyEmailform.controls['passWord'].valid && companyEmailform.controls['passWord'].touched">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Url</mat-label>
+                <input matInput placeholder="Url" formControlName="url" />
+                <mat-error *ngIf="!companyEmailform.controls['url'].valid && companyEmailform.controls['url'].touched">
+                    Url is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Port</mat-label>
+                <input matInput placeholder="Port" formControlName="port" />
+                <mat-error *ngIf="!companyEmailform.controls['port'].valid && companyEmailform.controls['port'].touched">
+                    Port is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button mat-raised-button color="primary" (click)="saveData()">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

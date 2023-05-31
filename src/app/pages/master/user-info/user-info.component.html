@@ -1,0 +1,84 @@
+<mat-toolbar>
+    User Info
+</mat-toolbar>
+<form [formGroup]="userInfo">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>User Name</mat-label>
+                <input matInput placeholder="UserName" formControlName="userName" />
+                <mat-error *ngIf="!userInfo.controls['userName'].valid && userInfo.controls['userName'].touched">
+                    User Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" formControlName="password" />
+                <mat-error *ngIf="!userInfo.controls['password'].valid && userInfo.controls['password'].touched && !userInfo.controls['password'].hasError('pattern')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="userInfo.controls['password'].hasError('pattern')">
+                    Enter Valid <strong> Password id</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" />
+                <mat-error *ngIf="!userInfo.controls['name'].valid && userInfo.controls['name'].touched">
+                    Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email" />
+                <mat-error *ngIf="!userInfo.controls['email'].valid && userInfo.controls['email'].touched">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Role </mat-label>
+                <!-- <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Permission<b>*</b> </mat-label> -->
+                <mat-select placeholder="Role" [(ngModel)]="selectedYears" formControlName="role" multiple>
+                    <mat-option *ngFor="let request of roleList" [value]="request.id">{{request.role}}</mat-option>
+                </mat-select>
+                <!-- </mat-form-field> -->
+                <!-- <mat-select placeholder="Role" formControlName="role" multiple>
+                    <mat-option>Admin</mat-option>
+                    <mat-option>SuperAdmin</mat-option>
+                    <mat-option>User</mat-option>
+                </mat-select> -->
+                <mat-error *ngIf="!userInfo.controls['email'].valid && userInfo.controls['email'].touched">
+                    Role is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <!-- <div fxFlex="49" fxFlex.lt-md="49" fxFlex.sm="100" fxLayout="column">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Uploaded File 3</mat-label>
+                <input matInput placeholder="Uploaded File 3" formControlName="fileUpload3" />
+                <mat-icon (click)="onFileSelected($event)" matSuffix>upload</mat-icon>
+                <input #fileInput1 type="file" id="fileUpload1" (change)="onFileSelected($event)" accept="application/pdf" class="hide-control" />
+            </mat-form-field>
+        </div> -->
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button (click)="saveData()" mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

@@ -1,0 +1,91 @@
+<mat-toolbar>
+    Vendor Details
+</mat-toolbar>
+<form [formGroup]="vendorBankDetailsform">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Bank Name</mat-label>
+                <input matInput placeholder="Bank Name" formControlName="bankName" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['bankName'].valid && vendorBankDetailsform.controls['bankName'].touched">
+                    Bank Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Bank Address</mat-label>
+                <input matInput placeholder="Bank Address" formControlName="bankBranchAddress" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['bankBranchAddress'].valid && vendorBankDetailsform.controls['bankBranchAddress'].touched">
+                    Bank Address is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Account Number</mat-label>
+                <input matInput placeholder="Account Number" formControlName="accountNumber" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['accountNumber'].valid && vendorBankDetailsform.controls['accountNumber'].touched">
+                    Account Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <!-- <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Company Website</mat-label>
+                <input matInput placeholder="Company Website" formControlName="companyWebsite" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['companyWebsite'].valid && vendorBankDetailsform.controls['companyWebsite'].touched">
+                    Company Website is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div> -->
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Account Type</mat-label>
+                <input matInput placeholder="Account Type" formControlName="accountType" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['accountType'].valid && vendorBankDetailsform.controls['accountType'].touched">
+                    Account Type is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Account Holder Name</mat-label>
+                <input matInput placeholder="accountName" formControlName="accountName" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['accountName'].valid && vendorBankDetailsform.controls['accountName'].touched">
+                    Account Holder Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>IFSC Code</mat-label>
+                <input matInput placeholder="IFSC Code" formControlName="ifscCode" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['ifscCode'].valid && vendorBankDetailsform.controls['ifscCode'].touched">
+                    IFSC Code is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Swift Code</mat-label>
+                <input matInput placeholder="Swift Code" formControlName="swiftCode" />
+                <mat-error *ngIf="!vendorBankDetailsform.controls['swiftCode'].valid && vendorBankDetailsform.controls['swiftCode'].touched">
+                    Swift Code is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button mat-raised-button color="primary" (click)="saveData()">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

@@ -1,0 +1,35 @@
+<mat-toolbar>
+    Role Details
+</mat-toolbar>
+<form [formGroup]="roleForm">
+    <!-- content here -->
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Company Name</mat-label>
+                <input matInput placeholder="name" formControlName="name" />
+                <mat-error *ngIf="!roleForm.controls['name'].valid && roleForm.controls['name'].touched">
+                    Company Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div fxFlex="49" fxFlex.md="49" fxFlex.sm="100" fxLayout="column ">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Permission </mat-label>
+                <mat-select placeholder="Role" [(ngModel)]="selectedYears" formControlName="permission" multiple>
+                    <mat-option *ngFor="let request of permissionList" [value]="request.permissionId">{{request.code}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="!roleForm.controls['permission'].valid && roleForm.controls['permission'].touched">
+                    Permission is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div style="margin-left: 35%;">
+        <button mat-raised-button color="primary" (click)="saveData()">Submit</button>
+        <button mat-raised-button color="primary">Reset</button>
+    </div>
+
+</form>

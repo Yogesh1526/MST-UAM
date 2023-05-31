@@ -1,0 +1,20 @@
+button {
+    width: 20%;
+    text-align: center;
+    padding-left: 10px;
+    margin-right: 10px;
+    background-color: cadetblue !important;
+}
+
+.mat-toolbar {
+    background: unset;
+    color: rgba(0, 0, 0, .87);
+}
+
+.mat-input-element {
+    color: black;
+}
+
+.hide-control {
+    display: none !important;
+}
